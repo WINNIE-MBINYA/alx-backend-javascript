@@ -1,56 +1,81 @@
+/**
+ * Represents a Holberton Course.
+ */
 export default class HolbertonCourse {
-  // Constructor to initialize the class properties
+  /**
+   * Creates a new HolbertonCourse.
+   * @param {string} name - The name of the course.
+   * @param {number} length - The length of the course (in weeks).
+   * @param {string[]} students - The names of students enrolled in the course.
+   */
   constructor(name, length, students) {
-    this.name = name; // Call the setter for 'name'
-    this.length = length; // Call the setter for 'length'
-    this.students = students; // Call the setter for 'students'
+    this.name = name;
+    this.length = length;
+    this.students = students;
   }
 
-  // Getter for 'name' property
+  /**
+   * Gets the name of the course.
+   * @returns {string} The name of the course.
+   */
   get name() {
-    return this._name; // Return the private property '_name'
+    return this._name;
   }
 
-  // Setter for 'name' property
+  /**
+   * Sets the name of the course.
+   * @param {string} val - The new name of the course.
+   * @throws {TypeError} If the name is not a string.
+   */
   set name(val) {
-    // Check if the value is a string
     if (typeof val !== 'string') {
-      throw new TypeError('Name must be a string'); // Throw error if the value is not a string
+      throw new TypeError('Name must be a string');
     }
-    this._name = val; // Set the private property '_name'
+    this._name = val;
   }
 
-  // Getter for 'length' property
+  /**
+   * Gets the length of the course.
+   * @returns {number} The length of the course.
+   */
   get length() {
-    return this._length; // Return the private property '_length'
+    return this._length;
   }
 
-  // Setter for 'length' property
+  /**
+   * Sets the length of the course.
+   * @param {number} val - The new length of the course.
+   * @throws {TypeError} If the length is not a number.
+   */
   set length(val) {
-    // Check if the value is a number
     if (typeof val !== 'number') {
-      throw new TypeError('Length must be a number'); // Throw error if the value is not a number
+      throw new TypeError('Length must be a number');
     }
-    this._length = val; // Set the private property '_length'
+    this._length = val;
   }
 
-  // Getter for 'students' property
+  /**
+   * Gets the list of students enrolled in the course.
+   * @returns {string[]} The names of students.
+   */
   get students() {
-    return this._students; // Return the private property '_students'
+    return this._students;
   }
 
-  // Setter for 'students' property
+  /**
+   * Sets the list of students enrolled in the course.
+   * @param {string[]} val - The new list of students.
+   * @throws {TypeError} If students is not an array of strings.
+   */
   set students(val) {
-    // Check if the value is an array
     if (!Array.isArray(val)) {
-      throw new TypeError('Students must be an array'); // Throw error if the value is not an array
+      throw new TypeError('Students must be an array');
     }
-    // Check if all elements in the array are strings
-    for (let i = 0; i < val.length; i++) {
+    for (let i = 0; i < val.length; i += 1) { // Using `i += 1` instead of `i++`
       if (typeof val[i] !== 'string') {
-        throw new TypeError('Students must be an array of strings'); // Throw error if any element is not a string
+        throw new TypeError('Students must be an array of strings');
       }
     }
-    this._students = val; // Set the private property '_students'
+    this._students = val;
   }
 }
