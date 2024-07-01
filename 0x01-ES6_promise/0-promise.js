@@ -8,4 +8,4 @@ export default function getResponseFromAPI() {
   return new Promise((resolve, reject) => {
     // The promise executor is intentionally left empty
   });
-  }
+}
