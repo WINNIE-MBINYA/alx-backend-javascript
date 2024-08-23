@@ -1,12 +1,10 @@
-const calculateNumber = require('./2-calcul_chai');
-
 describe('calculateNumber', function() {
-    let chai;
     let expect;
+    let calculateNumber;
 
     before(async function() {
-        chai = await import('chai');
-        expect = chai.expect;
+        expect = (await import('chai')).expect;
+        calculateNumber = (await import('./2-calcul_chai.js')).default;
     });
 
     it('should return 6 when type is SUM and inputs are 1.4 and 4.5', function() {
